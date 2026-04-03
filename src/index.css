@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", sans-serif;
+  
+  --color-bf-orange: #ff6600;
+  --color-bf-dark: #0a0a0a;
+  --color-bf-gray: #2a2a2a;
+  --color-bf-earth: #4a3f35;
+  --color-bf-text: #d1d1d1;
+}
+
+@layer base {
+  body {
+    @apply bg-bf-dark text-bf-text font-sans selection:bg-bf-orange selection:text-white;
+    background-image: 
+      linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+      url('https://www.transparenttextures.com/patterns/dark-matter.png');
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-wider;
+  }
+}
+
+.paper-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+}
+
+.metal-texture {
+  background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bf-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-bf-gray border-2 border-bf-dark rounded-full hover:bg-bf-orange transition-colors;
+}
